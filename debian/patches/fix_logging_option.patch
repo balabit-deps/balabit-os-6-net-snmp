@@ -1,0 +1,23 @@
+Description: fix man description
+Author: Hideki Yamane <henrich@debian.org>
+
+---
+Origin: vendor
+Bug-Debian: http://bugs.debian.org/616437
+Forwarded: no
+Last-Update: 2013-01-23
+
+--- a/man/snmpd.8.def
++++ b/man/snmpd.8.def
+@@ -78,9 +78,9 @@
+ .I "\-Dmib_init \-H"
+ (assuming debugging support has been compiled in).
+ .TP
+-.B \-L[efos]
++.B \-L[eEfFoOsS]
+ Specify where logging output should be directed (standard error or output,
+-to a file or via syslog).  See LOGGING OPTIONS in snmpcmd(5) for details.
++to a file or via syslog).  See LOGGING OPTIONS in snmpcmd(1) for details.
+ .TP
+ .BR \-m " \fIMIBLIST"
+ Specifies a colon separated list of MIB modules to load for this
