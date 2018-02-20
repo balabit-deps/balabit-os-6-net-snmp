@@ -1,3 +1,10 @@
+net-snmp (5.7.3+dfsg-1ubuntu4.1) xenial; urgency=medium
+
+  * d/snmpd.init: also match start-stop-daemon against pidfile to avoid
+    killing extra snmpd processes for example in container (LP: #1720109)
+
+ -- Christian Ehrhardt <christian.ehrhardt@canonical.com>  Tue, 20 Feb 2018 14:53:51 +0100
+
 net-snmp (5.7.3+dfsg-1ubuntu4) xenial; urgency=medium
 
   * Rebuild against libmysqlclient20.

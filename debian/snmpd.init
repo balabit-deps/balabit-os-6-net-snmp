@@ -45,21 +45,21 @@ case "$1" in
 	    mkdir -p /var/run/agentx
     fi
     if [ "$SNMPDRUN" = "yes" -a -f /etc/snmp/snmpd.conf ]; then
-	start-stop-daemon --quiet --start --oknodo --exec /usr/sbin/snmpd \
+	start-stop-daemon --quiet --start --oknodo --pidfile "$SNMP_PID" --exec /usr/sbin/snmpd \
 	    -- $SNMPDOPTS
 	log_progress_msg " snmpd"
     fi
     ;;
   stop)
     log_daemon_msg "Stopping SNMP services:"
-    start-stop-daemon --quiet --stop --oknodo --retry 3 --exec /usr/sbin/snmpd && [ ! -f $SNMP_PID ] || rm $SNMP_PID
+    start-stop-daemon --quiet --stop --oknodo --retry 3 --pidfile "$SNMP_PID" --exec /usr/sbin/snmpd && [ ! -f $SNMP_PID ] || rm $SNMP_PID
     log_progress_msg " snmpd"
     ;;
   restart)
     log_daemon_msg "Restarting SNMP services:"
-    start-stop-daemon --quiet --stop --oknodo --retry 3 --exec /usr/sbin/snmpd  && [ ! -f $SNMP_PID ] || rm $SNMP_PID
+    start-stop-daemon --quiet --stop --oknodo --retry 3 --pidfile "$SNMP_PID" --exec /usr/sbin/snmpd  && [ ! -f $SNMP_PID ] || rm $SNMP_PID
     if [ "$SNMPDRUN" = "yes" -a -f /etc/snmp/snmpd.conf ]; then
-	start-stop-daemon --quiet --start --exec /usr/sbin/snmpd -- $SNMPDOPTS
+	start-stop-daemon --quiet --start --pidfile "$SNMP_PID" --exec /usr/sbin/snmpd -- $SNMPDOPTS
 	log_progress_msg " snmpd"
     fi
     ;;
