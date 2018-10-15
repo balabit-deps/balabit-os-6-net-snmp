@@ -25,3 +25,4 @@ Fix-kfreebsd-builds-with-kernel-headers-10.patch
 fix-request-id-0.patch
 CVE-2015-5621.patch
 my_load_defaults
+CVE-2018-18065.patch

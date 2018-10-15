@@ -1,3 +1,12 @@
+net-snmp (5.7.3+dfsg-1ubuntu4.2) xenial-security; urgency=medium
+
+  * SECURITY UPDATE: DoS via NULL pointer exception
+    - debian/patches/CVE-2018-18065.patch: fix logic in
+      agent/helpers/table.c.
+    - CVE-2018-18065
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Mon, 15 Oct 2018 10:16:47 -0400
+
 net-snmp (5.7.3+dfsg-1ubuntu4.1) xenial; urgency=medium
 
   * d/snmpd.init: also match start-stop-daemon against pidfile to avoid
