@@ -26,3 +26,7 @@ fix-request-id-0.patch
 CVE-2015-5621.patch
 my_load_defaults
 CVE-2018-18065.patch
+autofs-skip-autofs-entries.patch
+autofs-fix-a-recently-introduced-bug.patch
+put-paranthesis-around-macros-which-are-expressions.patch
+fix-check-hr-filesys-autofs.patch
